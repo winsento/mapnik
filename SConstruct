@@ -871,6 +871,9 @@ def CheckProjData(context, silent=False):
     ret = context.TryRun("""
 
 // This is narly, could eventually be replaced using https://github.com/OSGeo/proj.4/pull/551]
+#ifndef ACCEPT_USE_OF_DEPRECATED_PROJ_API_H
+ #define ACCEPT_USE_OF_DEPRECATED_PROJ_API_H
+#endif
 #include <proj_api.h>
 #include <iostream>
 #include <cstring>
